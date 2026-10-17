@@ -1,12 +1,3 @@
-// 01-basics — your work goes in this file.
-//
-// The lesson is in example.js:  node 01-basics/example.js
-// Check your work with:         npm test 01
-//
-// Fill in the BODIES only — each function's declaration line is written for
-// you. Delete the `// TODO` and the `throw` line, and answer in their place.
-//
-// RETURN the value. A console.log is not a return.
 
 /**
  * Says what type a value is.
@@ -17,8 +8,7 @@
  * @returns {string}
  */
 export function describeValue(value) {
-  // TODO: use typeof inside a template literal.
-  throw new Error("describeValue is not written yet");
+  return `${value} is a ${typeof value}`;
 }
 
 /**
@@ -30,48 +20,44 @@ export function describeValue(value) {
  * @returns {string}
  */
 export function priceLabel(product, amount) {
-  // TODO: two values in one template literal.
-  throw new Error("priceLabel is not written yet");
+  return `${product} costs ${amount} EGP`;
 }
 
 /**
- * Is this price over 100 EGP?
- * isExpensive(320) -> true
- * isExpensive(45) -> false
- * isExpensive(100) -> false, because 100 is not over 100
+ * Checks whether an amount is expensive.
  *
- * @param {number} amount in EGP
+ * @param {number} amount
  * @returns {boolean}
  */
 export function isExpensive(amount) {
-  // TODO: return the comparison itself. You do not need an if statement.
-  throw new Error("isExpensive is not written yet");
+  return amount > 100;
 }
 
 /**
- * What shipping costs on an order.
- * Orders over 500 EGP ship free. Everything else costs 50 EGP.
- * shippingCost(600) -> 0
- * shippingCost(500) -> 50, because 500 is not over 500
+ * Calculates shipping cost.
  *
- * @param {number} orderTotal in EGP
- * @returns {number} the shipping cost in EGP
+ * @param {number} orderTotal
+ * @returns {number}
  */
 export function shippingCost(orderTotal) {
-  // TODO: use an if. Remember that return stops the function.
-  throw new Error("shippingCost is not written yet");
+  if (orderTotal > 500) {
+    return 0;
+  }
+  return 50;
 }
 
 /**
- * Describes how much of something is left.
- *   0          -> "Out of stock"
- *   1 to 9     -> "Low stock"
- *   10 or more -> "In stock"
+ * Describes the stock level.
  *
- * @param {number} count how many are left
+ * @param {number} count
  * @returns {string}
  */
 export function stockLabel(count) {
-  // TODO: use if / else if / else. The order of the branches matters.
-  throw new Error("stockLabel is not written yet");
+  if (count === 0) {
+    return "Out of stock";
+  } else if (count < 10) {
+    return "Low stock";
+  } else {
+    return "In stock";
+  }
 }
